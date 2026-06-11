@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Drummond's Mountain Shop | Your Mountain, Fully Equipped</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#374952",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f4",
+                        "on-error-container": "#93000a",
+                        "amber-glow": "#C04E36", // Updated to match the rusty/burnt orange from IMAGE_3
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#536252",
+                        "tertiary": "#11242c",
+                        "on-primary-fixed-variant": "#3c4a3c",
+                        "secondary-fixed-dim": "#ffb688",
+                        "on-secondary-fixed-variant": "#733500",
+                        "forest-deep": "#1A241A",
+                        "inverse-primary": "#bbcbb8",
+                        "outline-variant": "#c4c8c0",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-primary-container": "#95a593",
+                        "on-secondary-container": "#713400",
+                        "primary-fixed-dim": "#bbcbb8",
+                        "surface-container-high": "#eae8e3",
+                        "primary-fixed": "#d7e7d3",
+                        "primary-container": "#2d3b2d",
+                        "on-secondary": "#ffffff",
+                        "slate-mountain": "#323F4B",
+                        "surface": "#fbf9f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3ee",
+                        "on-secondary-fixed": "#311300",
+                        "on-tertiary-fixed": "#0a1e26",
+                        "on-primary-fixed": "#111f12",
+                        "on-background": "#1b1c19",
+                        "secondary-fixed": "#ffdbc7",
+                        "on-surface-variant": "#444842",
+                        "on-tertiary-container": "#90a4ae",
+                        "tertiary-fixed-dim": "#b5cad4",
+                        "surface-container": "#f0eee9",
+                        "tertiary-container": "#273a42",
+                        "tertiary-fixed": "#d1e6f0",
+                        "outline": "#747872",
+                        "primary": "#182519",
+                        "on-surface": "#1b1c19",
+                        "wood-dark": "#3E2723",
+                        "paper-aged": "#F2EFE9",
+                        "surface-bright": "#fbf9f4",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e4e2dd",
+                        "secondary-container": "#fc9c5a",
+                        "inverse-surface": "#30312e",
+                        "surface-dim": "#dbdad5",
+                        "secondary": "#9E3C27" // Darker shade of the brand orange
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Roboto Slab"],
+                        "body-md": ["Open Sans"],
+                        "body-lg": ["Open Sans"],
+                        "headline-lg-mobile": ["Roboto Slab"],
+                        "headline-sm": ["Roboto Slab"],
+                        "headline-lg": ["Roboto Slab"],
+                        "headline-md": ["Roboto Slab"],
+                        "label-lg": ["Open Sans"],
+                        "tagline": ["Roboto Slab"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "tagline": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+        .grain-overlay { background-image: url('https://www.transparenttextures.com/patterns/p6.png'); pointer-events: none; }
+        .heritage-divider { height: 1px; background: linear-gradient(to right, transparent, rgba(50, 63, 75, 0.2), transparent); }
+        .woodgrain-divider::before { content: '✶ ✶ ✶'; letter-spacing: 0.5em; opacity: 0.3; font-size: 14px; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-x-hidden">
+<div class="fixed inset-0 grain-overlay z-[60] opacity-30"></div>
+<!-- Sticky Header -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-surface-container-highest/95 backdrop-blur-sm border-b border-slate-mountain/20">
+<div class="flex justify-between items-center h-24 px-gutter max-w-container-max mx-auto">
+<div class="h-20 flex items-center">
+<img alt="Drummond's Mountain Shop Logo" class="h-full w-auto object-contain" src="images/logo.png"/>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest">Call Today</span>
+<a class="font-headline-sm text-headline-sm text-forest-deep font-bold" href="tel:6032787547">(603) 278-7547</a>
+</div>
+<a class="bg-amber-glow text-on-primary px-6 py-3 rounded font-label-lg text-label-lg hover:bg-secondary transition-colors duration-200 uppercase" href="tel:6032787547">
+                    Call Now
+                </a>
+</div>
+<!-- Mobile Call Button -->
+<a class="md:hidden bg-amber-glow text-white p-3 rounded-full flex items-center justify-center" href="tel:6032787547">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center pt-20">
+<div class="absolute inset-0 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="absolute inset-0 bg-forest-deep/60 z-10"></div>
+<img alt="Skiers on the slopes at Bretton Woods Mountain Resort with Mount Washington and the Presidential Range in the distance" class="w-full h-full object-cover" src="images/hero-mountain.jpg"/>
+</div>
+<div class="relative z-20 text-center px-gutter max-w-4xl transition-all duration-1000 opacity-100 translate-y-0">
+<h1 class="font-headline-xl text-headline-xl text-white mb-6">Your Mountain, Fully Equipped</h1>
+<p class="font-headline-md text-headline-md text-paper-aged/90 mb-10">
+                Full Service Ski Shop — Rentals, Sales &amp; Tuning — Open 7 Days a Week.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<a class="w-full sm:w-auto bg-amber-glow text-white px-8 py-4 rounded font-label-lg text-label-lg hover:bg-secondary transition-all hover:-translate-y-0.5 uppercase tracking-wider" href="tel:6032787547">
+                    Call Us Now
+                </a>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="bg-forest-deep py-8 border-b border-white/10 relative z-30">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-2 lg:grid-cols-4 gap-6 text-center transition-all duration-1000 opacity-100 translate-y-0">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-amber-glow text-3xl">downhill_skiing</span>
+<span class="font-label-lg text-label-lg text-paper-aged uppercase">Ski &amp; Snowboard Rentals</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-amber-glow text-3xl">build</span>
+<span class="font-label-lg text-label-lg text-paper-aged uppercase">Expert Ski Tuning</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-amber-glow text-3xl">schedule</span>
+<span class="font-label-lg text-label-lg text-paper-aged uppercase">Open 7 Days a Week</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-amber-glow text-3xl">done_all</span>
+<span class="font-label-lg text-label-lg text-paper-aged uppercase">No Reservation Needed</span>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-24 bg-surface relative">
+<div class="max-w-container-max mx-auto px-gutter transition-all duration-1000 opacity-100 translate-y-0">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-forest-deep mb-4">Mountain Services</h2>
+<div class="woodgrain-divider text-forest-deep"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Rentals -->
+<div class="group bg-paper-aged border border-slate-mountain/10 overflow-hidden transition-all hover:shadow-md hover:border-amber-glow/40">
+<div class="h-64 overflow-hidden">
+<img alt="Wall of rental skis at Drummond's" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="images/rentals.png"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md text-forest-deep mb-3">Rentals</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Daily and multi-day ski and snowboard rentals. No reservation needed, just walk in and get fitted by our experts.
+                        </p>
+</div>
+</div>
+<!-- Equipment Sales -->
+<div class="group bg-paper-aged border border-slate-mountain/10 overflow-hidden transition-all hover:shadow-md hover:border-amber-glow/40">
+<div class="h-64 overflow-hidden">
+<img alt="Inside the shop, shelves stocked with apparel and footwear" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="images/equipment.png"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md text-forest-deep mb-3">Equipment Sales</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Top brands including Rossignol, Atomic, Burton, K2, Salomon and more. Expertly curated selection for all levels.
+                        </p>
+</div>
+</div>
+<!-- Ski Tuning -->
+<div class="group bg-paper-aged border border-slate-mountain/10 overflow-hidden transition-all hover:shadow-md hover:border-amber-glow/40">
+<div class="h-64 overflow-hidden">
+<img alt="Rack of skis and poles ready for tuning" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="images/tuning.png"/>
+</div>
+<div class="p-8">
+<h3 class="font-headline-md text-headline-md text-forest-deep mb-3">Ski Tuning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Full-service tuning to keep your gear performing all season. Waxing, edge sharpening, and binding adjustments.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bike Rentals -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 items-center gap-16 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="relative order-1 md:order-1">
+<div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-amber-glow/30"></div>
+<img alt="Our bike rental tent set up out front of the shop" class="relative z-10 border border-slate-mountain/10 w-full rounded-lg shadow-lg" src="images/bikes.png"/>
+<div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-amber-glow/30"></div>
+</div>
+<div class="order-2 md:order-2">
+<h2 class="font-headline-lg text-headline-lg text-forest-deep mb-6">Summer on Two Wheels: Bike Rentals</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Explore the White Mountains on two wheels with our full-service bike rentals. Whether you're hitting the rugged trails or cruising scenic paths, we have the perfect mountain bikes and cruisers ready for your summer adventure.
+            </p>
+</div>
+</div>
+</section>
+<!-- Hiking & Camping Gear -->
+<section class="py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 items-center gap-16 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="order-2 md:order-1">
+<h2 class="font-headline-lg text-headline-lg text-forest-deep mb-6">Trail Ready: Hiking &amp; Camping Gear</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                Gear up for your next outdoor excursion with our comprehensive selection of hiking and camping equipment.
+            </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-glow">hiking</span>
+<span class="text-forest-deep font-headline-sm text-headline-sm">Back Packs &amp; Tents</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-glow">camping</span>
+<span class="text-forest-deep font-headline-sm text-headline-sm">Sleeping Bags &amp; Maps</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-glow">directions_walk</span>
+<span class="text-forest-deep font-headline-sm text-headline-sm">Hiking &amp; Running Shoes</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-glow">water_drop</span>
+<span class="text-forest-deep font-headline-sm text-headline-sm">Hydration Packs &amp; Bottles</span>
+</li>
+</ul>
+</div>
+<div class="relative order-1 md:order-2">
+<div class="absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-amber-glow/30"></div>
+<img alt="A hiker with a backpack on the Gulfside Trail near the summit of Mount Clay in the White Mountains" class="relative z-10 border border-slate-mountain/10 w-full rounded-lg shadow-lg" src="images/hiking-trail.jpg"/>
+<div class="absolute -bottom-4 -left-4 w-24 h-24 border-b-4 border-l-4 border-amber-glow/30"></div>
+<p class="relative z-10 text-xs text-on-surface-variant/50 mt-2 text-right">Photo: Greg Neault / Wikimedia Commons (CC BY-SA 3.0)</p>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 items-center gap-16 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-amber-glow/30"></div>
+<img alt="The outside of Drummond's Mountain Shop with the mountains behind it" class="relative z-10 border border-slate-mountain/10 w-full" src="images/shop-exterior.png"/>
+<div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-amber-glow/30"></div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-forest-deep mb-8">Why Shop With Us?</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-amber-glow mt-1">cottage</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-forest-deep">Locally Owned</h4>
+<p class="text-on-surface-variant">Proudly family-owned and operated since 1993.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-amber-glow mt-1">no_accounts</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-forest-deep">No Reservation Needed</h4>
+<p class="text-on-surface-variant">Walk in anytime—we're always ready to help you get out on the snow.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-amber-glow mt-1">groups</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-forest-deep">Knowledgeable Staff</h4>
+<p class="text-on-surface-variant">Our team knows the mountains and the gear because we live here.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-amber-glow mt-1">calendar_month</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-forest-deep">Year-Round Service</h4>
+<p class="text-on-surface-variant">From ski season to summer hiking, we've got you covered 7 days a week.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Brands Grid -->
+<section class="py-20 bg-surface border-y border-slate-mountain/10 overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter transition-all duration-1000 opacity-100 translate-y-0">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest text-center mb-12">Authorized Dealer for the Best Brands</h3>
+<div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 max-w-5xl mx-auto opacity-70">
+<span class="font-headline-sm text-headline-sm text-forest-deep">Atomic</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Blizzard</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Fischer</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">K2</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Rossignol</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Salomon</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Burton</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">GNU</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Lib Tech</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Columbia</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Woolrich</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Spyder</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Sorel</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">SmartWool</span>
+<span class="text-slate-mountain opacity-30">✶</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep">Mountain Hardwear</span>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-paper-aged relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter transition-all duration-1000 opacity-100 translate-y-0">
+<h2 class="font-headline-lg text-headline-lg text-forest-deep text-center mb-16">Mountain Tales</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 bg-surface border border-slate-mountain/10 rounded-lg">
+<div class="text-amber-glow mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 italic">
+                        "The only place we get our gear. No reservations needed means we can just show up on a powder day and get on the lift fast."
+                    </p>
+<p class="font-label-lg text-label-lg text-forest-deep">— Mark R., Local Skier</p>
+</div>
+<div class="p-8 bg-surface border border-slate-mountain/10 rounded-lg">
+<div class="text-amber-glow mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 italic">
+                        "Expert tuning! My edges were razor sharp for the ice. Drummond's really knows their stuff."
+                    </p>
+<p class="font-label-lg text-label-lg text-forest-deep">— Sarah K., Snowboarder</p>
+</div>
+<div class="p-8 bg-surface border border-slate-mountain/10 rounded-lg">
+<div class="text-amber-glow mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6 italic">
+                        "Friendly, family atmosphere. They treated my kids like pros while fitting their first rental boots."
+                    </p>
+<p class="font-label-lg text-label-lg text-forest-deep">— The Miller Family</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Find Us & Hours -->
+<section class="py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-16 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="h-[400px] rounded-xl overflow-hidden relative border border-slate-mountain/20">
+<iframe class="w-full h-full grayscale-[20%]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Drummonds+Mountain+Shop,+Rt+302+Bretton+Woods,+NH+03575&output=embed" style="border:0;" title="Map to Drummond's Mountain Shop in Bretton Woods, NH"></iframe>
+</div>
+<div class="flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-forest-deep mb-8">Visit the Shop</h2>
+<div class="space-y-8">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface-variant uppercase mb-2">Our Location</h4>
+<p class="font-headline-sm text-headline-sm text-forest-deep">
+                            Rt 302 Bretton Woods<br/>New Hampshire, 03575
+                        </p>
+<p class="text-on-surface-variant mt-2 text-sm italic">Located across from the gas station at the intersection of Mount Washington Base Road.</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface-variant uppercase mb-2">Shop Hours</h4>
+<p class="font-body-md text-body-md text-forest-deep font-bold">Open 7 Days a Week</p>
+<p class="text-on-surface-variant">8:00 AM – 5:00 PM</p>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface-variant uppercase mb-2">Contact</h4>
+<p class="font-body-md text-body-md text-forest-deep font-bold">Call: (603) 278-7547</p>
+<p class="text-on-surface-variant">info@drummondsmountainshop.com</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-forest-deep text-paper-aged py-16">
+<div class="max-w-container-max mx-auto px-gutter text-center md:text-left">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 border-b border-white/10 pb-12 mb-12">
+<div class="max-w-xs mx-auto md:mx-0">
+<p class="font-tagline text-tagline text-paper-aged/70 italic">
+                        Drummond's Mountain Shop — Proudly serving the mountains since 1993.
+                    </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-6 text-left w-full md:w-auto">
+<div>
+<h5 class="font-label-lg text-label-lg text-amber-glow uppercase mb-2">Visit Us</h5>
+<p class="opacity-80 font-body-md">Rt 302 Bretton Woods<br/>New Hampshire, 03575</p>
+<p class="opacity-80 font-body-md mt-2">Open 7 Days a Week — 8:00 AM to 5:00 PM</p>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg text-amber-glow uppercase mb-2">No Reservation Needed</h5>
+<p class="text-sm opacity-60">We pride ourselves on our accessibility. Stop by any time during our operating hours for immediate assistance with gear, service, or advice.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm opacity-40">
+<p class="">© 1993-2024 Drummond's Mountain Shop. All rights reserved.</p>
+<a class="hover:underline" href="tel:6032787547">(603) 278-7547</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
